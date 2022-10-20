@@ -1,43 +1,54 @@
 @layout('layouts/main')
 
 @section('body')
-  <section>
-    <form action="/signup" method="post">
-      <div>
-        <label for="name"></label>
-        <input type="text" name="name" id="name">
-        @if(flashMessages.has('errors.name'))
-          {{ flashMessages.get('errors.name') }}
-        @endif
-      </div>
+  <section class="flex justify-center py-10">
+    <div class="" style="width: 22rem">
+      <article class="border p-12 bg-white">
+        <h1>Clone Instagram</h1>
+        <button type="submit">Login with facebook</button>
+        <p>------OR-------</p>
+        <form action="/signup" method="post">
+          <div>
+            <label for="name"></label>
+            <input class="placeholder-gray-700 w-full bg-gray-200 rounded px-2 py-1 my-1 border" type="text" name="name" id="name" placeholder="Full Name">
+            @if(flashMessages.has('errors.name'))
+              {{ flashMessages.get('errors.name') }}
+            @endif
+          </div>
 
-      <div>
-        <label for="email"></label>
-        <input type="email" name="email" id="email">
-        @if(flashMessages.has('errors.email'))
-        {{ flashMessages.get('errors.email') }}
-      @endif
-      </div>
+          <div>
+            <label for="email"></label>
+            <input class="placeholder-gray-700 w-full bg-gray-200 rounded px-2 py-1 my-1 border" type="email" name="email" id="email" placeholder="Email">
+            @if(flashMessages.has('errors.email'))
+            {{ flashMessages.get('errors.email') }}
+          @endif
+          </div>
 
-      <div>
-        <label for="password"></label>
-        <input type="password" name="password" id="password">
-        @if(flashMessages.has('errors.password'))
-        {{ flashMessages.get('errors.password') }}
-      @endif
-      </div>
+          <div>
+            <label for="password"></label>
+            <input class="w-full bg-gray-200 rounded px-2 py-1 my-1 border"type="password" name="password" id="password">
+            @if(flashMessages.has('errors.password'))
+            {{ flashMessages.get('errors.password') }}
+          @endif
+          </div>
 
-      <div>
-        <label for="password_confirmation"></label>
-        <input type="password" name="password_confirmation" id="password_confirmation">
-        @if(flashMessages.has('errors.password_confirmation'))
-        {{ flashMessages.get('errors.password_confirmation') }}
-      @endif
-      </div>
+          <div>
+            <label for="password_confirmation"></label>
+            <input class="w-full bg-gray-200 rounded px-2 py-1 my-1 border" type="password" name="password_confirmation" id="password_confirmation">
+            @if(flashMessages.has('errors.password_confirmation'))
+            {{ flashMessages.get('errors.password_confirmation') }}
+          @endif
+          </div>
 
-      <div>
-        <input type="submit" value="Sign Up">
-      </div>
-    </form>
+          <div>
+            <input type="submit" value="Sign Up">
+          </div>
+        </form>
+        <p>By signing up, you agree to our Terms , Privacy Policy and Cookies Policy .</p>
+      </article>
+      <article class="border text-center mt-2 p-6 bg-white">
+        Have an account? <a href="/login" class="text-blue-600">Log in</a>
+      </article>
+    </div>
   </section>
 @endsection
