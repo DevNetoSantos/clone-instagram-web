@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AdonisJS - A fully featured web framework for Node.js</title>
-  <link href="https://fonts.googleapis.com/css?family=Poppins:400,500&display=swap" rel="stylesheet">
-</head>
-<body>
+@layout('layouts/main')
 
+@section('body')
   <main>
     <div>
       @if(auth.isAuthenticated)
@@ -23,5 +16,4 @@
       @endif
     </div>
   </main>
-</body>
-</html>
+@endsection
