@@ -29,7 +29,7 @@ export default class SignupController {
     return response.redirect('/');
   }
 
-  public async storeLogin({request}: HttpContextContract) {
+  public async storeLogin({auth, response, request}: HttpContextContract) {
     const payload = await request.validate({
       schema: schema.create({
         email: schema.string({}, [
@@ -46,7 +46,21 @@ export default class SignupController {
       }
     })
 
-    const user = await User.findByOrFail('email', payload.email)
-    return user;
+    //const user = await User.findByOrFail('email', payload.email)
+    const email = payload.email
+    const password = payload.password
+
+    try {
+      await auth.attempt(email, password)
+      response.redirect('/profile')
+    } catch {
+      return response.badRequest('Invalid credentials')
+    }
+    
+  }
+
+  public async logout({auth, response}: HttpContextContract) {
+    await auth.logout()
+    response.redirect('/')
   }
 }
