@@ -2,6 +2,7 @@ import { DateTime } from 'luxon'
 import { BaseModel, beforeSave, column } from '@ioc:Adonis/Lucid/Orm'
 import Hash from '@ioc:Adonis/Core/Hash'
 import Mail from '@ioc:Adonis/Addons/Mail'
+//import { nanoid } from 'nanoid' //gerar token
 
 export default class User extends BaseModel {
   @column({ isPrimary: true })
@@ -30,6 +31,8 @@ export default class User extends BaseModel {
   }
 
   public async sendVerificationEmail() {
+/*     const token = 'apjsaiojdiasdjoaihdiaudhiuahdiaudhiahdia'
+    const url = `${process.env.APP_URL}/verify-email/${this.id}/${token}` */
     await Mail.send((message) => {
       message
         .from('clone@instagram.com')
