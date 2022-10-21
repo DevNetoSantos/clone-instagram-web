@@ -1,25 +1,55 @@
 @layout('layouts/main')
 
 @section('body')
-  <form action="/login" method="post">
-    <div>
-      <label for="email"></label>
-      <input type="email" name="email" id="email">
-      @if(flashMessages.has('errors.email'))
-      {{ flashMessages.get('errors.email') }}
-    @endif
+  <section class="flex justify-center py-10">
+
+    <div class="" style="width: 22rem">
+
+      <article class="border px-12 py-6 bg-white">
+
+        <h1 class="text-center text-4xl my-8 font-semibold">Instagram</h1>
+
+        <form action="/login" method="post">
+
+          <div>
+            <label for="email"></label>
+            <input class="focus:outline-none focus:border-blue-400 w-full bg-gray-100 rounded px-2 py-2 my-1 border" type="email" name="email" id="email" placeholder="Email">
+            @if(flashMessages.has('errors.email'))
+            {{ flashMessages.get('errors.email') }}
+          @endif
+          </div>
+
+          <div>
+            <label for="password"></label>
+            <input class="focus:outline-none focus:border-blue-400 w-full bg-gray-100 rounded px-2 py-2 my-1 border"type="password" name="password" id="password" placeholder="Senha">
+            @if(flashMessages.has('errors.password'))
+            {{ flashMessages.get('errors.password') }}
+            @endif
+          </div>
+
+          <div>
+            <input class="cursor-pointer text-white w-full bg-blue-800 rounded py-2 my-4" type="submit" value="login">
+          </div>
+
+          <p class="text-center text-gray-500 my-1 text-sm">------OR-------</p>
+
+          <article class="text-center py-2">
+            <a href="#">Login in with Facebook</a>
+          </article>
+
+          <article class="text-center text-sm">
+            <a href="#">Forgot Password?</a>
+          </article>
+
+        </form>
+
+      </article>
+
+      <article class="border text-center mt-2 p-6 bg-white">
+        Dont't have an account? <a href="/signup" class="text-blue-600">Sign Up</a>
+      </article>
+
     </div>
 
-    <div>
-      <label for="password"></label>
-      <input type="password" name="password" id="password">
-      @if(flashMessages.has('errors.password'))
-      {{ flashMessages.get('errors.password') }}
-    @endif
-    </div>
-
-    <div>
-      <input type="submit" value="login">
-    </div>
-  </form>
+  </section>
 @endsection
