@@ -25,7 +25,14 @@ export default class SignupController {
     user.email = payload.email,
     user.password = payload.password
 
+    const existUser = await User.findBy('email', payload.email)
+
+    if(existUser) {
+      return response.badRequest('Este email ja existe')
+    }
+
     await user.save();
+    
     return response.redirect('/');
   }
 
