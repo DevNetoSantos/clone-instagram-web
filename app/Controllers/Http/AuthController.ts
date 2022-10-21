@@ -11,11 +11,15 @@ export default class SignupController {
         email: schema.string({}, [
           rules.email()
         ]),
+        username: schema.string({}, [
+          rules.maxLength(25)
+        ]),
         password: schema.string()
       }),
       messages: {
         'name.required': 'name é obrigatório',
         'email.required': 'email é obrigatório',
+        'username.required': 'Apelido é obrigatório',
         'password.required': 'password é obrigatório',
       }
     })
@@ -23,6 +27,7 @@ export default class SignupController {
     const user = new User()
     user.name = payload.name,
     user.email = payload.email,
+    user.username = payload.username,
     user.password = payload.password
 
     const existUser = await User.findBy('email', payload.email)
