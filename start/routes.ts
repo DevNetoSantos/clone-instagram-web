@@ -12,3 +12,5 @@ Route.post('/login', 'AuthController.storeLogin')
 
 Route.post('/logout', 'AuthController.logout')
 
+Route.post('/verify-email', 'EmailVerifyController.store').middleware('auth')
+
