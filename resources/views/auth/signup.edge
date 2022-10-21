@@ -10,7 +10,7 @@
         <form action="/signup" method="post">
           <div>
             <label for="name"></label>
-            <input class="w-full bg-gray-200 rounded px-2 py-1 my-1 border" type="text" name="name" id="name" placeholder="Nome">
+            <input class="focus:outline-none focus:border-blue-400 w-full bg-gray-100 rounded px-2 py-1 my-1 border" type="text" name="name" id="name" placeholder="Nome">
             @if(flashMessages.has('errors.name'))
               {{ flashMessages.get('errors.name') }}
             @endif
@@ -18,7 +18,7 @@
 
           <div>
             <label for="email"></label>
-            <input class="w-full bg-gray-200 rounded px-2 py-1 my-1 border" type="email" name="email" id="email" placeholder="Email">
+            <input class="focus:outline-none focus:border-blue-400 w-full bg-gray-100 rounded px-2 py-1 my-1 border" type="email" name="email" id="email" placeholder="Email">
             @if(flashMessages.has('errors.email'))
             {{ flashMessages.get('errors.email') }}
           @endif
@@ -26,7 +26,7 @@
 
           <div>
             <label for="password"></label>
-            <input class="w-full bg-gray-200 rounded px-2 py-1 my-1 border"type="password" name="password" id="password" placeholder="Senha">
+            <input class="focus:outline-none focus:border-blue-400 w-full bg-gray-100 rounded px-2 py-1 my-1 border"type="password" name="password" id="password" placeholder="Senha">
             @if(flashMessages.has('errors.password'))
             {{ flashMessages.get('errors.password') }}
           @endif
@@ -34,13 +34,13 @@
 
           <div>
             <label for="password_confirmation"></label>
-            <input class="w-full bg-gray-200 rounded px-2 py-1 my-1 border" type="password" name="password_confirmation" id="password_confirmation" placeholder="Confirmar Senha">
+            <input class="focus:outline-none focus:border-blue-400 w-full bg-gray-100 rounded px-2 py-1 my-1 border" type="password" name="password_confirmation" id="password_confirmation" placeholder="Confirmar Senha">
             @if(flashMessages.has('errors.password_confirmation'))
             {{ flashMessages.get('errors.password_confirmation') }}
           @endif
           </div>
-          <p class=" text-center py-4 px-2 text-sm text-gray-400">People who use our service may have uploaded your contact information to Instagram. Learn More</p>
-          <p class=" text-center py-4 px-2 text-sm text-gray-400">By signing up, you agree to our Terms , Privacy Policy and Cookies Policy.</p>
+          <p class="text-center py-2 px-1 text-xs text-gray-400">People who use our service may have uploaded your contact information to Instagram. Learn More</p>
+          <p class="text-center py-2 px-1 text-xs text-gray-400">By signing up, you agree to our Terms , Privacy Policy and Cookies Policy.</p>
           <div class="mt-3">
             <input class="cursor-pointer text-white w-full bg-blue-800 rounded p-1" type="submit" value="Sign Up">
           </div>
