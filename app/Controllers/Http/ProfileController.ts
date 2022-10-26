@@ -12,7 +12,9 @@ export default class ProfilesController {
       return view.render('errors.not-found')
     }
 
-    return view.render('profile')
+    await user.load('posts') //pegar , relação
+
+    return view.render('profile', { user })
   }
 
   public async edit({view}: HttpContextContract) {

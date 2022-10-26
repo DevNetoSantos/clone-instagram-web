@@ -38,7 +38,7 @@ export default class SignupController {
 
     await user.save();
 
-    user?.sendVerificationEmail()
+    //user?.sendVerificationEmail()
     
     return response.redirect('/');
   }

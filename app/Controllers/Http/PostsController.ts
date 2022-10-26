@@ -32,7 +32,7 @@ export default class PostsController {
     const post = new Post()
     post!.image = `images/${imageName}`
     post.caption = payload.caption
-    post.user_id = auth.user?.id
+    post.userId = auth.user?.id
     
     post.save()
     return response.redirect(`/${auth.user?.username}`)

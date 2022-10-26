@@ -22,7 +22,7 @@
 
       <div class="flex my-5">
         <p class="mr-8">
-          {{auth.user.details}}
+          {{user.details}}
         </p>
       </div>
 
@@ -34,12 +34,9 @@
         </a>
       </h2>
       <article class="grid grid-cols-3 gap-10 px-10">
-        <img src=""  class="w-64 h-64 border" alt="">
-        <img src=""  class="w-64 h-64 border" alt="">
-        <img src=""  class="w-64 h-64 border" alt="">
-        <img src=""  class="w-64 h-64 border" alt="">
-        <img src=""  class="w-64 h-64 border" alt="">
-        <img src=""  class="w-64 h-64 border" alt="">
+        @each(post in user.posts)
+          <img src="{{post.image}}"  class="w-64 h-64 border" alt="">
+        @endeach
       </article>
     </section>
   </div>
