@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <title>Clone Instgram</title>
 </head>
@@ -14,9 +15,11 @@
       <h1 class="text-xl font-semibold">
          <a href="/">Instagram</a>
       </h1>
-      <div>
-        <img src="" class="h-8 w-8 rounded-full border" alt="profile">
-      </div>
+      @if(auth.isAuthenticated)
+        <div>
+          <img src="{{auth.user.avatar}}" class="h-8 w-8 rounded-full border" alt="profile">
+        </div>
+      @endif
     </div>
   </nav>
   <div class="bg-gray-100 min-h-screen flex justify-center">
