@@ -1,1 +1,13 @@
-<p> It's a 404 </p>
+@layout('layouts/main')
+
+@section('body')
+<body>
+  <div class="flex justify-center">
+    <div class="m-auto py-10">
+      <h1>Sorry, this page isn't available.</h1>
+      <article>
+        The link you followed may be broken, or the page may have been removed <a href="/" class="text-blue-700">Go back to Instagram.</a>
+      </article>
+    </div>
+  </div>
+@endsection

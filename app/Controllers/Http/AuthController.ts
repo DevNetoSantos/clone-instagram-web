@@ -63,10 +63,10 @@ export default class SignupController {
     //const user = await User.findByOrFail('email', payload.email)
     const email = payload.email
     const password = payload.password
+    const user = await auth.attempt(email, password)
 
     try {
-      await auth.attempt(email, password)
-      response.redirect('/profile')
+      response.redirect(`/${user.username}`)
     } catch {
       return response.badRequest('Invalid credentials')
     }
