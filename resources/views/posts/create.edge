@@ -1,0 +1,21 @@
+@layout('layouts/main')
+
+@section('body')
+  <div class="mt-20 bg-white border rounded p-5">
+    <h1 class="text-center text-2xl my-4">Create new Post</h1>
+
+    <form action="" method="post" enctype="multipart/form-data">
+      <div class="">
+        <p class="my-2">Caption</p>
+        <textarea class="border w-full" name="details" rows="4" placeholder="Your Bio Come Here"></textarea>
+      </div>
+      <div class="my-5">
+        <p class="my-2">Upload Post</p>
+        <input type="file" name="avatar" class="w-full">
+      </div>
+      <label for="details">   
+        <input type="submit" value="Update" class="px-2 py-1 bg-blue-500 text-white border rounded">
+      </label>
+    </form>
+  </div>
+@endsection
