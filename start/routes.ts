@@ -12,6 +12,7 @@ Route.post('/login', 'AuthController.storeLogin')
 Route.post('/logout', 'AuthController.logout')
 
 Route.get('/posts/create', 'PostsController.create').middleware('auth')
+Route.post('/posts/create', 'PostsController.store').middleware('auth')
 
 Route.post('/verify-email', 'EmailVerifyController.index').middleware('auth')
 //Route.get('/verify-email/:userid/:token', 'EmailVerifyController.store')
