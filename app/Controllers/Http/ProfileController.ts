@@ -1,7 +1,6 @@
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import Application from '@ioc:Adonis/Core/Application'
 import User from 'App/Models/User';
-import { UserFactory } from 'Database/factories';
 
 export default class ProfilesController {
   public async index({view, params}: HttpContextContract) {
