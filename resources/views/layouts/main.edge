@@ -16,9 +16,9 @@
          <a href="/">Instagram</a>
       </h1>
       @if(auth.isAuthenticated)
-        <div>
+        <a href="{{auth.user.username}}">
           <img src="{{auth.user.avatar}}" class="h-8 w-8 rounded-full border" alt="profile">
-        </div>
+        </a>
       @endif
     </div>
   </nav>

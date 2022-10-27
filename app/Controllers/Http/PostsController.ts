@@ -15,7 +15,7 @@ export default class PostsController {
         caption: schema.string(),
         image: schema.file({
           size: '2mb',
-          extnames: ['jpg', 'png', 'gif'],
+          extnames: ['jpg', 'png', 'jpeg'],
         })
       }),
       messages: {
